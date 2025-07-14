@@ -1,0 +1,158 @@
+/* ========== GENERAL RESET & BASE ========== */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+/* ========== MAIN CONTAINER (Landing Page) ========== */
+.landingPageContainer {
+  width: 100vw;
+  height: 100vh;
+  background: url("/background.png") no-repeat center center;
+  background-size: cover;
+  color: white;
+}
+
+/* ========== NAVIGATION BAR (Landing Page) ========== */
+.landingPageContainer nav {
+  padding: 1.6rem 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.landingPageContainer nav h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.landingPageContainer nav .navlist {
+  display: flex;
+  gap: 1.6rem;
+  cursor: pointer;
+}
+
+/* ========== LANDING CONTENT SECTION ========== */
+.landingMainContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3rem;
+  height: 80vh;
+}
+
+.landingMainContainer > div:first-child {
+  font-size: 2.2rem;
+}
+
+.landingMainContainer > div:first-child div[role='button'] {
+  background: #D97500;
+  padding: 1rem 1.5rem;
+  border-radius: 20px;
+  margin-top: 1.9rem;
+  width: fit-content;
+}
+
+.landingMainContainer > div:first-child div[role='button'] a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.7rem;
+}
+
+.landingMainContainer > div:last-child img {
+  height: 70vh;
+  width: auto;
+}
+
+/* ========== NAVBAR FOR AUTHENTICATED PAGES ========== */
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  background-color: #1976d2;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navBar p {
+  margin: 0 10px;
+}
+
+/* ========== MEETING SECTION ========== */
+.meetContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  height: calc(100vh - 70px);
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+}
+
+.leftPanel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.leftPanel h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  color: #333;
+}
+
+.rightPanel {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rightPanel > img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ========== FORM STYLING ========== */
+.MuiTextField-root {
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.MuiButton-contained {
+  background-color: #1976d2 !important;
+  color: white !important;
+}
+
+.MuiButton-contained:hover {
+  background-color: #155fa0 !important;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+  .meetContainer {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .leftPanel, .rightPanel {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .navBar {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+}
