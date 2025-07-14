@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 
 import usersRoutes from "./routes/usersroutes.js";
-import { connectToSocket } from "./controllers/socketmanager.js"; // ✅ Fixed
+import { connectToSocket } from "./controllers/socketmanager.js"; 
 
 const app = express();
 const server = createServer(app);
@@ -31,7 +31,7 @@ const startServer = async () => {
       useUnifiedTopology: true
     });
 
-    connectToSocket(server); // ✅ Fixed
+    connectToSocket(server); 
 
     server.listen(8000, () => {
       console.log("Server running on http://localhost:8000");
