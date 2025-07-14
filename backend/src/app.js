@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 
 import usersRoutes from "./routes/usersroutes.js";
-import { connectToSocket } from "./controllers/socketmanager.js"; 
+import { connectToSocket } from "./controllers/socketmanager.js";
 
 const app = express();
 const server = createServer(app);
@@ -24,17 +24,19 @@ app.get("/home", (req, res) => {
 app.use("/api/users", usersRoutes);
 
 // Connect DB and start server
+const PORT = process.env.PORT || 8000;
+
 const startServer = async () => {
   try {
     await mongoose.connect(MONGO_URI, {
       useNewUrlParser: true,
-      useUnifiedTopology: true
+      useUnifiedTopology: true,
     });
 
-    connectToSocket(server); 
+    connectToSocket(server);
 
-    server.listen(8000, () => {
-      console.log("Server running on http://localhost:8000");
+    server.listen(PORT, '0.0.0.0', () => {
+      console.log(`Server running on http://0.0.0.0:${PORT}`);
     });
   } catch (error) {
     console.error("MongoDB connection error:", error.message);
